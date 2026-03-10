@@ -1,0 +1,34 @@
+services:
+  django: &django
+    build:
+      context: .
+      dockerfile: ./docker/local/django/Dockerfile
+    image: spm_local_django
+    container_name: spm_local_django
+    depends_on:
+      - postgres
+    volumes:
+      - .:/app:z
+    env_file:
+      - ./docker/.envs/.local/.django
+      - ./docker/.envs/.local/.postgres
+    environment:
+      - OPENBLAS_NUM_THREADS=1
+    ports:
+      - "8000:8000"
+    command: /start
+  postgres:
+    build:
+      context: .
+      dockerfile: ./docker/local/postgres/Dockerfile
+    image: spm_local_postgres
+    container_name: spm_local_postgres
+    volumes:
+      - spm_local_postgres_data:/var/lib/postgresql/data
+      - spm_local_postgres_data_backups:/backups
+    env_file:
+      - ./docker/.envs/.local/.postgres
+
+volumes:
+  spm_local_postgres_data: {}
+  spm_local_postgres_data_backups: {}
