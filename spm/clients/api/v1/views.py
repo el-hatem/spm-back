@@ -1,7 +1,7 @@
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import mixins, viewsets
 from rest_framework.filters import OrderingFilter, SearchFilter
-from rest_framework.permissions import IsAdminUser, SAFE_METHODS
+from rest_framework.permissions import SAFE_METHODS, IsAdminUser
 
 from spm.clients.api.v1.serializers import ClientDetailSerializer, ClientModifySerializer
 from spm.clients.models import Client
@@ -14,7 +14,6 @@ class ClientViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, viewsets.Gen
     search_fields = ("name", "email")
     filterset_fields = ("company",)
     permission_classes = [IsAdminUser]
-
 
     def get_serializer_class(self):
         if self.request.method in SAFE_METHODS:
