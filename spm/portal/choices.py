@@ -4,6 +4,7 @@ from django.utils.translation import gettext_lazy as _
 
 class ApprovalModel(models.TextChoices):
     COMPANY = "company", _("Company")
+    CLIENT = "client", _("Client")
 
 
 class ApprovalStatus(models.TextChoices):

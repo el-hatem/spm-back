@@ -70,6 +70,7 @@ CONTROLLED_LOCAL_APPS = [
 ]
 EXPOSED_LOCAL_APPS = [
     "spm.companies",
+    "spm.clients",
 ]
 
 LOCAL_APPS = CONTROLLED_LOCAL_APPS + EXPOSED_LOCAL_APPS
