@@ -118,7 +118,7 @@ To set up a local development environment, follow these steps:
    ```bash
    docker-compose -f docker-compose-local.yml run django python manage.py createsuperuser
    ```
-5. ** run containers**:
+5. **run containers**:
 
    ```bash
    docker-compose -f docker-compose-local.yml up
@@ -128,7 +128,7 @@ To set up a local development environment, follow these steps:
 
    * API root: [http://localhost:8000](http://localhost:8000)
    * Admin panel: [http://localhost:8000/admin/](http://localhost:8000/admin/)
-   * swagger: [http://localhost:8000/admin/](http://localhost:8000/api/docs)
+   * swagger: [http://localhost:8000/api/docs/](http://localhost:8000/api/docs/)
 
 ---
 
