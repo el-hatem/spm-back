@@ -1,7 +1,7 @@
 # spm-back
 
- Welcome to the **spm Backend**
----
+Welcome to the **spm Backend**
+------------------------------
 
 ## 📚 Table of Contents
 
@@ -103,12 +103,12 @@ To set up a local development environment, follow these steps:
    git clone https://github.com/el-hatem/spm-back.git
    cd spm-back
    ```
-2. **Build and run containers**:
+2. **Build containers**:
 
    ```bash
-   docker-compose -f docker-compose-local.yml up --build
+   docker-compose -f docker-compose-local.yml build
    ```
-3. **Run initial migrations**:
+3. **Run initial migrations (optional)**:
 
    ```bash
    docker-compose -f docker-compose-local.yml run django python manage.py makemigrations
@@ -118,30 +118,20 @@ To set up a local development environment, follow these steps:
    ```bash
    docker-compose -f docker-compose-local.yml run django python manage.py createsuperuser
    ```
-5. **Access the project**:
+5. ** run containers**:
+
+   ```bash
+   docker-compose -f docker-compose-local.yml up
+   ```
+   
+6. **Access the project**:
 
    * API root: [http://localhost:8000](http://localhost:8000)
    * Admin panel: [http://localhost:8000/admin/](http://localhost:8000/admin/)
-6. **Run tests**:
-
-   ```bash
-   docker-compose -f docker-compose-local.yml run django coverage run -m pytest
-   docker-compose -f docker-compose-local.yml run django coverage html
-   ```
+   * swagger: [http://localhost:8000/admin/](http://localhost:8000/api/docs)
 
 ---
 
-## 🚀 Deployment
-
-Production-ready Docker setup is available via:
-
-```bash
-docker-compose -f docker-compose-production.yml up --build
-```
-
----
-
----
 
 ## 📄 License
 
@@ -178,14 +168,5 @@ Use the following prefixes when making a commit:
    ```
 4. **Push** to the branch: `git push origin feat/your-feature`
 5. Create a **Pull Request**.
-
----
-
-## 📬 Contact
-
-For bugs, suggestions, or feature requests, please [open an issue](https://github.com/el-hatem/spm-back/issues) or reach out via email:
-
-📧 [contact@spm.app](mailto:contact@spm.app)
-🌐 [https://spm.app](https://spm.app)
 
 ---
