@@ -111,12 +111,12 @@ To set up a local development environment, follow these steps:
 3. **Run initial migrations**:
 
    ```bash
-   docker-compose exec web python manage.py migrate
+   docker-compose -f docker-compose-local.yml run django python manage.py makemigrations
    ```
 4. **Create a superuser (optional)**:
 
    ```bash
-   docker-compose exec web python manage.py createsuperuser
+   docker-compose -f docker-compose-local.yml run django python manage.py createsuperuser
    ```
 5. **Access the project**:
 
