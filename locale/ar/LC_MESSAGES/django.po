@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-10 22:53+0000\n"
+"POT-Creation-Date: 2026-03-11 01:17+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,10 +18,43 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-#: config/settings/base.py:174
+
+#: config/settings/base.py:176
 msgid "English"
 msgstr ""
 
-#: config/settings/base.py:175
+#: config/settings/base.py:177
 msgid "Arabic"
+msgstr ""
+
+#: spm/companies/choices.py:6
+msgid "Small Business"
+msgstr ""
+
+#: spm/companies/choices.py:7
+msgid "Startup"
+msgstr ""
+
+#: spm/companies/choices.py:8
+msgid "Corporation"
+msgstr ""
+
+#: spm/portal/api/validators.py:8
+msgid "invalid sharable object"
+msgstr ""
+
+#: spm/portal/choices.py:6
+msgid "Company"
+msgstr ""
+
+#: spm/portal/choices.py:10
+msgid "Pending"
+msgstr ""
+
+#: spm/portal/choices.py:11
+msgid "Approved"
+msgstr ""
+
+#: spm/portal/choices.py:12
+msgid "Rejected"
 msgstr ""

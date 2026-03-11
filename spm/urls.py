@@ -20,7 +20,6 @@ from django.contrib import admin
 from django.urls import include, path
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerSplitView
 
-
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", include(("config.api_router", "api"), "api")),
