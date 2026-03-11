@@ -1,12 +1,11 @@
+from django.contrib.contenttypes.models import ContentType
 from drf_spectacular.utils import extend_schema_field
 from rest_framework import serializers
-from django.contrib.contenttypes.models import ContentType
 
+from spm.portal.api.validators import ApprovalValidator
 from spm.portal.models import Approval
 from spm.users.api.v1.serializers import UserDetailSerializer
-from spm.portal.api.validators import ApprovalValidator
 from spm.utils.api.serializers import CONTENT_OBJECT_SERIALIZERS
-
 
 
 class CreateApprovalSerializer(serializers.ModelSerializer):
@@ -16,8 +15,6 @@ class CreateApprovalSerializer(serializers.ModelSerializer):
         model = Approval
         fields = ("content_type", "object_id")
         validators = [ApprovalValidator()]
-
-
 
 
 class ApprovalDetailSerializer(serializers.ModelSerializer):
@@ -34,6 +31,7 @@ class ApprovalDetailSerializer(serializers.ModelSerializer):
         serializer_class = CONTENT_OBJECT_SERIALIZERS.get(obj.content_type.model)
         if serializer_class:
             return serializer_class(obj.content_object, context=self.context, read_only=True).data
+
 
 class ApproveSerializer(serializers.Serializer):
     note = serializers.CharField(required=False, allow_blank=True)

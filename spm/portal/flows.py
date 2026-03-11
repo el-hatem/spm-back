@@ -1,4 +1,5 @@
 import logging
+
 from django.utils import timezone
 from viewflow.fsm import State
 
@@ -35,7 +36,6 @@ class ApprovalFlow:
         self.approval.reviewed_at = timezone.now()
         logger.info(f"Approve {self.approval}")
 
-
     @status.transition(
         source=[ApprovalStatus.PENDING],
         target=ApprovalStatus.REJECTED,
@@ -45,4 +45,3 @@ class ApprovalFlow:
         self.approval.note = note
         self.approval.reviewed_at = timezone.now()
         logger.info(f"Reject {self.approval}")
-        

@@ -10,7 +10,7 @@ class ApprovalValidator:
     def __call__(self, attr: str, serializer: serializers.ModelSerializer):
         content_type = attr.get("content_type", None)
         object_id = attr.get("object_id", None)
-        
+
         content_type = ContentType.objects.get(model=content_type.model)
         Model = content_type.model_class()
 

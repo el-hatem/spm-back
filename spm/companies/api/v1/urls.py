@@ -1,6 +1,5 @@
-from django.urls import path, include
+from django.urls import include, path
 from rest_framework.routers import DefaultRouter
-
 
 from spm.companies.api.v1.views import CompanyViewSet
 
