@@ -30,7 +30,6 @@ APP_DIR = BASE_DIR / "spm"
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env("SECRET_KEY", default="")
-FERNET_KEY = env("FERNET_KEY", default="")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DJANGO_SETTINGS_MODULE = env.str("DJANGO_SETTINGS_MODULE", default="config.settings.production")
@@ -221,17 +220,6 @@ REST_FRAMEWORK = {
     ),
 }
 
-
-# drf-nested
-DRF_NESTED_MULTIPART_PARSER = {
-    "separator": "bracket",
-    "raise_duplicate": True,
-    "assign_duplicate": False,
-    # # output of parser is converted to querydict
-    # # if is set to False, dict python is returned
-    "querydict": False,
-}
-
 # drf-spectacular
 # https://github.com/tfranzel/drf-spectacular
 SPECTACULAR_SETTINGS = {
@@ -255,7 +243,3 @@ CSP_IMG_SRC = ("'self'", "data:")
 # Option: CDN
 CSP_DEFAULT_SRC = ("'self'", "'unsafe-inline'", "cdn.jsdelivr.net")
 CSP_IMG_SRC = ("'self'", "data:", "cdn.jsdelivr.net")
-# django-phonenumber-field
-DEFAULT_REGION = "EG"
-# password reset
-PASSWORD_RESET_CONFIRM_REDIRECT_BASE_URL = env.str("PASSWORD_RESET_CONFIRM_REDIRECT_BASE_URL", "http://localhost:3000")
